@@ -1,8 +1,8 @@
-### OPAMP_Generator的说明
+## OPAMP_Generator的说明
 
 此目录下包含了OPAMP-Generator中的拓扑优化，以及晶体管级电路自动映射方法的相关代码，其中：
 
-## topo_opt（拓扑优化）
+### topo_opt（拓扑优化）
 
 1：运行代码前请确保Python（推荐3.6.13）环境中已安装“torch”(推荐1.10.2)和“pygraphviz”（推荐1.6）库，以及其他常用科学计算库；
 
@@ -12,7 +12,7 @@
 
 4：VGAE模型的训练结果将会被保存在results文件夹下，其下已有一个训练好的demo；拓扑优化的结果将会被保存在opt_results及tmp_circuits文件夹下，电路demo可以参阅../schematic_mapping/behv_circuits。
 
-## schematic_mapping（晶体管级电路自动映射）
+### schematic_mapping（晶体管级电路自动映射）
 
 1：运行代码前请确保Python（推荐3.6.13）环境中已安装“hebo”和“pymoo”库，以及其他常用科学计算库；
 
@@ -23,7 +23,7 @@
 4：需要映射的行为级电路模型需要放置在behv_circuits目录下，映射完成的晶体管级电路会生成在mapped_circuits下，论文中展示的三个电路已经放置在相应目录下。
     注意：在行为级模型以及晶体管级电路的网表中，器件尺寸皆为BO程序最后一轮迭代的尝试，所以对其直接进行仿真可能会和论文中展示的最优结果无法对应。
 
-### sdm_topo_dse的说明
+## sdm_topo_dse的说明
 
 此目录下包含了提出的针对delta-sigma调制器的高层次拓扑综合方法的相关代码，其中：
 
@@ -39,7 +39,7 @@
 
 6：case_study路径下给出了一个示例调制器的高层次模型（adc_test.slx），可以用过simulink打开查看及仿真。
 
-### 注意事项：
+## 注意事项：
 
 1：拓扑优化及晶体管级电路映射都需要调用Cadence Spectre仿真器仿真，请确保环境变量里配置了相应软件，推荐ic615版本；
 
