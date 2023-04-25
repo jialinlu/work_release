@@ -39,6 +39,22 @@
 
 6：case_study路径下给出了一个示例调制器的高层次模型（adc_test.slx），可以用过simulink打开查看及仿真。
 
+## testbench的说明
+
+此目录下的behv_circuits文件夹中包含了32个由自动拓扑优化程序搜索得到的行为级三级运算放大器电路，经由schematic_mapping程序可以自动转化为晶体管级的电路网表，并进行sizing优化。
+
+经过测试，在.18工艺下，所有的32个行为级电路在进行晶体管级映射后，均可达到一下电路规格：
+
+       prb_constr0     gain      >= 85  dB    
+
+       prb_constr1     pm        >= 55        
+
+       prb_constr2     gbw       >= 0.7 MHz   
+
+       prb_constr3     power     <= 250 uW    
+
+       goal            fom_s     maximize     
+
 ## 注意事项：
 
 1：拓扑优化及晶体管级电路映射都需要调用Cadence Spectre仿真器仿真，请确保环境变量里配置了相应软件，推荐ic615版本；
@@ -46,4 +62,6 @@
 2：VGAE神经网络的训练需要GPU及cuda环境，推荐使用CUDA 11.0；
 
 3：delta-sigma调制器的高层次拓扑综合需要MATLAB及Simulink，MATLAB推荐2017.b版本，此外还需要安装SDToolbox2工具箱用于调制器的建模及仿真，
-    工具箱可在https://www.mathworks.com/matlabcentral/fileexchange/25811-sdtoolbox-2/下找到。
+    工具箱可在https://www.mathworks.com/matlabcentral/fileexchange/25811-sdtoolbox-2/下找到；
+
+4：testbench中的晶体管映射代码与schematic_mapping路径下的相同，但是对电路中的R及C的尺寸自动计算部分尚未支持，如若需要对接电路版图的自动生成流程，需要根据工艺手动确定R和C的尺寸。
