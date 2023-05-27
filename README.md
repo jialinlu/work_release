@@ -2,6 +2,10 @@
 
 This directory contains the topology optimization in OPAMP-Generator, as well as the code related to the automatic mapping method for transistor-level circuits, where:
 
+### demo
+
+https://github.com/jialinlu/work_release/assets/43021674/baaba8f4-3ffb-4228-8020-19292d345b36
+
 ### topo_opt (topology optimization)
 
 1. Before running the code, please make sure that the Python (recommended 3.6.13) environment has "torch" (recommended 1.10.2) and "pygraphviz" (recommended 1.6) libraries installed, as well as other common scientific computing libraries The "torch" (recommended 1.10.2) and "pygraphviz" (recommended 1.6) libraries are installed, as well as other common scientific libraries;
